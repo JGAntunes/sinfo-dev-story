@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>JS WS</title>
+
+		<meta name="author" content="jgantunes">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/solarized.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>What do you know about SINFO?</h1>
+					<h3>Organizing a conference, tech style!</h3>
+					<img style="border: 0; box-shadow: 0 0 0" src="https://sinfo.org/static/logo2.png">
+					<p>
+						<small>Created using <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>, source is on <a href="https://github.com/jgantunes/sinfo-dev-story">Github</a>.</small>
+					</p>
+				</section>
+
+				<section>
+					<h1>Who am I?</h1>
+					<p>
+						@jgantunes on <a href="//twitter.com/jgantunes">twitter</a> and <a href="//github.com/JGAntunes">github</a>
+					</p>
+					<p>
+						Coordinator @ <a href="http://sinfo.org">SINFO</a>
+					</p>
+					<p>
+						Software Engineer @ <a href="http://yld.io">YLD</a>
+					</p>
+
+				</section>
+				<section>
+					<h1>Just a quick show of hands...</h1>
+					<p>Who knows SINFO?</p>
+					<p>Who has been to an edition of SINFO?</p>
+					<p>How many members? ... partipants? ... speakers? ... companies?</p>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>SINFO</h2>
+						<p>SINFO is a non-profit, college student, organization responsible for organizing one of the biggest Tech conferences in Portugal. It's an annual,
+							non-profit event whose goal is to create a suitable, tech friendly environment to learn, share and explore through keynotes, workshops, presentations and much, much more!</p>
+					</section>
+
+					<section>
+						<h2>The problem</h2>
+						<p>A good way to register information about speakers and companies.</p>
+						<p>Allow members to build a discussion around them.</p>
+						<p>A clear way to show communication status and allow peer review.</p>
+						<p>Some tasks could be improved and automated: sessions register, surveys, etc.</p>
+					</section>
+
+					<section>
+						<h2>What we had...</h2>
+						<p>A private forum.</p>
+						<p>A legacy "wiki".</p>
+						<p>Google drive docs.</p>
+						<p>Paper... A lot of paper...</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>We needed better...</h2>
+						<img style="height: 300px" src="http://franciscodias.net/images/francisco.jpg">
+						<p>Francisco (@xicombd) was litereally pissed of with the amount of time members lost in this processes.</p>
+						<p>First he started by building a scrapper to extract all the info we had on the private forum and store it in a MongoDB database.</p>
+					</section>
+
+					<section>
+						<p><b>We started by building a simple web app</b></p>
+						</br>
+						<p>A RESTful API built with NodeJS using HapiJS framework.</p>
+						<p>MongoDB database.</p>
+						<p>Angular 1.x on the client side.</p>
+					</section>
+
+					<section>
+						<p><b>And then filled the hell out of it with features!</b></p>
+						</br>
+						<img src="./imgs/contributors.png">
+					</section>
+
+					<section>
+						<p><b>When we eventually stopped to think...</b></p>
+						</br>
+						<p>The whole thing was tearing apart.</p>
+						<p>We built this whole monster in 4 months, but it was really hard to maintain it and improve it.</p>
+					</section>
+
+					<section>
+						<p><b>What we ended up doing</b></p>
+						</br>
+						<p>Refactor key parts of the code.</p>
+						<p>Cut down heavily on features which weren't that important.</p>
+						<p>Faced with the possibility, we ended up changing from Angular to AmpersandJS.</p>
+						<p>Automated tests.</p>
+					</section>
+
+					<section>
+						<p><b>Finally we had</b></p>
+						</br>
+						<a href="https://deck.sinfo.org">EventDeck</a>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>The rest of the problem</h2>
+						<p>Tasks like session tickets and surveys needed to be handled.</p>
+						<p>Take this chance to create a more engaging experience for the attendees.</p>
+						<p>But there was room for more. Why not use EventDeck info?</p>
+					</section>
+					<section>
+						<h2>The Cannon API</h2>
+						<p>A RESTful API to manage attendees allowing them to register in sessions,
+							answer to our surveys, win prizes through achievements and upload their CV's</p>
+						<p><b>Built using Node and HapiJS</b></p>
+					</section>
+					<section>
+						<h2>SINFO Web App</h2>
+						<p>The final piece in all of this puzzle, acts as the website to all our event(s)
+						with all the info provided from the EventDeck API and Cannon API</p>
+						<p><b>Built using AmpersandJS</b></p>
+					</section>
+				</session>
+
+				<section>
+					<h2>Technical decisions</h2>
+					</br>
+					<p>Why NodeJS?</p>
+					<p>Ampersand vs. Angular</p>
+				</section>
+				<section>
+					<h2>Our current infrastracture</h2>
+					</br>
+					<p>About 4 Digital Ocean droplets, running Ubuntu 14.04, with 1GB RAM,
+						20 GB SSD storage, 2TB Transfer (increased during Frebruary)</p>
+					<p>HAProxy on every droplet acting as load balancer</p>
+					<p>A Droplet to act has frontend, offload SSL and redirect traffic</p>
+					<p>API's and MongoDB on a single machine (Mongo is heavy on memory)</p>
+					<p>A Droplet for development purposes</p>
+				</section>
+				<section>
+					<h2>Why all this?</h2>
+					</br>
+					<img src="./imgs/analytics.png">
+				</section>
+				<section>
+					<h2>Some final stats</h2>
+					</br>
+					<p>Companies - 40 sponsored us, we contacted 258, 715 in our database</p>
+					<p>Speakers - 14 came, we contacted 256, 522 in our database</p>
+					<p>Communications - 3946 in our database</p>
+					<p>Comments - 3479 in our database</p>
+					<p>Users (attendees) - 1679 in our database</p>
+				</section>
+				<section>
+					<h2>Contributors</h2>
+					<p>Francisco Dias</p>
+					<p>Diogo Pais</p>
+					<p>Duarte Paiva</p>
+					<p>Francisco Gonçalves</p>
+					<p>Miguel Araújo</p>
+					<p>Fábio Antunes</p>
+					<p>Pedro Saraiva</p>
+					<p>Diogo Leitão</p>
+				</section>
+				<section>
+					<h2>The end</h2>
+					<b>return 'Thank you very much!'</b>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
